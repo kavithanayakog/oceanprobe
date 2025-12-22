@@ -1,0 +1,16 @@
+@startuml
+actor Client
+node "CommandProbeController / ProbeController" as Controller
+component "ProbeService (optional)" as Service
+component "ProbeRepository (JpaRepository)" as Repo
+entity "ProbeEntity" as Entity
+database "H2 (in-memory)" as H2
+
+Client -> Controller : HTTP (create / list / commands / move)
+Controller -> Repo : findById(id) / save(entity) / findAll()
+Controller -> Entity : toProbe() -> create Probe
+Controller -> Service : (if present) call business logic
+Repo --> H2 : SQL
+Controller -> Client : HTTP response (200/201/400/404)
+
+@enduml
