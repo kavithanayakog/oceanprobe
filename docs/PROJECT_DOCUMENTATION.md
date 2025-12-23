@@ -1,4 +1,4 @@
-# probe — Project Documentation
+# Probe — Project Documentation
 ## 1. Project overview
 The `probe` project exposes a small REST API for controlling probes on a grid. A probe has an (x,y) position and a facing `Direction` (NORTH, SOUTH, EAST, WEST). The API supports creating probes, listing/fetching/deleting probes, sending command sequences (F/B/L/R) and single-step movement or turns. The project persists probe state using Spring Data JPA and an embedded H2 database.
 
@@ -45,6 +45,64 @@ Minimum requirements
 - Lombok (IDE annotation processing enabled)
 - No external DB is required (H2 in-memory used by default)
 
+## 4. Class Diagram
+- +-------------+
+|   Grid      |
+|-------------|
+| width       |
+| height      |
++-------------+
+
++-------------+
+| Position    |
+|-------------|
+| x           |
+| y           |
++-------------+
+
++-------------+
+| Direction   |
+|-------------|
+| NORTH       |
+| SOUTH       |
+| EAST        |
+| WEST        |
++-------------+
+
++-------------+
+| Probe       |
+|-------------|
+| position    |
+| direction   |
++-------------+
+
++-------------+
+| Navigator   |
+|-------------|
+| move()      |
+| turn()      |
++-------------+
+
+## 6. Movement Logic: Forward / Backward Movement
+Facing	 Forward	 Backward
+NORTH	   y + 1	   y - 1
+SOUTH	   y - 1	   y + 1
+EAST	   x + 1	   x - 1
+WEST	   x - 1	   x + 1
+
+## 5. Clean Code Practices Used
+- Single Responsibility Principle
+- Meaningful class and method names
+- No hard-coded values
+- Immutability where possible
+- Centralized validation logic
+  
+## 6. Conclusion
+This project demonstrates:
+  - Strong Object-Oriented Design
+  - Proper TDD workflow
+  - Robust edge case handling
+  - Clean and extensible architecture
 
 
 
