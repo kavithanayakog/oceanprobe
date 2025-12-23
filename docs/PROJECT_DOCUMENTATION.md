@@ -47,42 +47,32 @@ Minimum requirements
 
 ## 4. Class Diagram
 
-+-------------+
 |   Grid      |
 |-------------|
 | width       |
 | height      |
-+-------------+
 
-+-------------+
 | Position    |
 |-------------|
 | x           |
 | y           |
-+-------------+
 
-+-------------+
 | Direction   |
 |-------------|
 | NORTH       |
 | SOUTH       |
 | EAST        |
 | WEST        |
-+-------------+
 
-+-------------+
 | Probe       |
 |-------------|
 | position    |
 | direction   |
-+-------------+
 
-+-------------+
 | Navigator   |
 |-------------|
 | move()      |
 | turn()      |
-+-------------+
 
 ## 6. Movement Logic: Forward / Backward Movement
 Facing	Forward	Backward		
@@ -90,7 +80,6 @@ NORTH	y + 1	y - 1
 SOUTH	y - 1	y + 1
 EAST	x + 1	x - 1
 WEST	x - 1	x + 1
-
 
 ## 5. Clean Code Practices Used
 - Single Responsibility Principle
