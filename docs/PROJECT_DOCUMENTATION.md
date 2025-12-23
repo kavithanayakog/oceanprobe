@@ -46,7 +46,8 @@ Minimum requirements
 - No external DB is required (H2 in-memory used by default)
 
 ## 4. Class Diagram
-- +-------------+
+
++-------------+
 |   Grid      |
 |-------------|
 | width       |
@@ -84,11 +85,12 @@ Minimum requirements
 +-------------+
 
 ## 6. Movement Logic: Forward / Backward Movement
-Facing	 Forward	 Backward
-NORTH	   y + 1	   y - 1
-SOUTH	   y - 1	   y + 1
-EAST	   x + 1	   x - 1
-WEST	   x - 1	   x + 1
+Facing	Forward	Backward		
+NORTH	y + 1	y - 1
+SOUTH	y - 1	y + 1
+EAST	x + 1	x - 1
+WEST	x - 1	x + 1
+
 
 ## 5. Clean Code Practices Used
 - Single Responsibility Principle
